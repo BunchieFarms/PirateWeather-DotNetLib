@@ -1,4 +1,7 @@
-﻿using System.Text;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using static PirateWeather_DotNetLib.Enums;
 
 namespace PirateWeather_DotNetLib
 {
@@ -21,9 +24,11 @@ namespace PirateWeather_DotNetLib
                 uriBuilder.Append($",{request.Time.UTCTimeStamp}");
 
             if (request.Exclude.Count > 0)
-                uriBuilder.Append($"?exclude={string.Join(",", request.Exclude).ToLowerInvariant()}");
+                uriBuilder.Append($"?exclude={string.Join(",", request.Exclude).ToLower()}");
+            else if (request.Include.Count > 0)
+                uriBuilder.Append($"?exclude={string.Join(",", ConvertIncludeToExclude(request.Include)).ToLower()}");
 
-            uriBuilder.Append($"&units={request.Unit}");
+            uriBuilder.Append($"&units={request.Unit.ToString().ToLower()}");
 
             if (request.Extend)
                 uriBuilder.Append("&extend=hourly");
@@ -39,6 +44,12 @@ namespace PirateWeather_DotNetLib
             if (location.Longitude > 180 && location.Latitude < 0) return false;
             if (location.Latitude > 180 && location.Longitude < 0) return false;
             return true;
+        }
+
+        internal static List<DataGroup> ConvertIncludeToExclude(List<DataGroup> dataGroups)
+        {
+            List<DataGroup> fullList = new List<DataGroup> { DataGroup.Alerts, DataGroup.Daily, DataGroup.Hourly, DataGroup.Minutely, DataGroup.Currently };
+            return fullList.Where(item => !dataGroups.Contains(item)).ToList();
         }
     }
 }
