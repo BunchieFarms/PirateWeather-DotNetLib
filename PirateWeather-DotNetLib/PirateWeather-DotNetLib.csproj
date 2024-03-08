@@ -11,4 +11,8 @@
     <PackageReference Include="System.Net.Http.Json" Version="8.0.0" />
   </ItemGroup>
 
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="copy $(OutDir)PirateWeather-DotNetLib.dll C:\Projects\CommonLib\" />
+  </Target>
+
 </Project>
