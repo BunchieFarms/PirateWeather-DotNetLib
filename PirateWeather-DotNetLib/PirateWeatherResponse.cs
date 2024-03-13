@@ -2,10 +2,10 @@
 {
     public class PirateWeatherResponse
     {
-        public float Latitude { get; set; }
-        public float Longitude { get; set; }
+        public double Latitude { get; set; }
+        public double Longitude { get; set; }
         public string Timezone { get; set; }
-        public float Offset { get; set; }
+        public double Offset { get; set; }
         public int Elevation { get; set; }
         public Currently Currently { get; set; }
         public Minutely Minutely { get; set; }
@@ -22,22 +22,22 @@
         public string Icon { get; set; }
         public int NearestStormDistance { get; set; }
         public int NearestStormBearing { get; set; }
-        public float PrecipIntensity { get; set; }
-        public float PrecipProbability { get; set; }
-        public float PrecipIntensityError { get; set; }
+        public double PrecipIntensity { get; set; }
+        public double PrecipProbability { get; set; }
+        public double PrecipIntensityError { get; set; }
         public string PrecipType { get; set; }
-        public float Temperature { get; set; }
-        public float ApparentTemperature { get; set; }
-        public float DewPoint { get; set; }
-        public float Humidity { get; set; }
-        public float Pressure { get; set; }
-        public float WindSpeed { get; set; }
-        public float WindGust { get; set; }
+        public double Temperature { get; set; }
+        public double ApparentTemperature { get; set; }
+        public double DewPoint { get; set; }
+        public double Humidity { get; set; }
+        public double Pressure { get; set; }
+        public double WindSpeed { get; set; }
+        public double WindGust { get; set; }
         public int WindBearing { get; set; }
-        public float CloudCover { get; set; }
-        public float UVIndex { get; set; }
-        public float Visibility { get; set; }
-        public float Ozone { get; set; }
+        public double CloudCover { get; set; }
+        public double UVIndex { get; set; }
+        public double Visibility { get; set; }
+        public double Ozone { get; set; }
     }
 
     public class Minutely
@@ -50,9 +50,9 @@
     public class MinutelyData
     {
         public int Time { get; set; }
-        public float PrecipIntensity { get; set; }
-        public float PrecipProbability { get; set; }
-        public float PrecipIntensityError { get; set; }
+        public double PrecipIntensity { get; set; }
+        public double PrecipProbability { get; set; }
+        public double PrecipIntensityError { get; set; }
         public string PrecipType { get; set; }
     }
 
@@ -68,23 +68,23 @@
         public int Time { get; set; }
         public string Icon { get; set; }
         public string Summary { get; set; }
-        public float PrecipIntensity { get; set; }
-        public float PrecipProbability { get; set; }
-        public float PrecipIntensityError { get; set; }
-        public float PrecipAccumulation { get; set; }
+        public double PrecipIntensity { get; set; }
+        public double PrecipProbability { get; set; }
+        public double PrecipIntensityError { get; set; }
+        public double PrecipAccumulation { get; set; }
         public string PrecipType { get; set; }
-        public float Pemperature { get; set; }
-        public float ApparentTemperature { get; set; }
-        public float DewPoint { get; set; }
-        public float Humidity { get; set; }
-        public float Pressure { get; set; }
-        public float WindSpeed { get; set; }
-        public float WindGust { get; set; }
+        public double Pemperature { get; set; }
+        public double ApparentTemperature { get; set; }
+        public double DewPoint { get; set; }
+        public double Humidity { get; set; }
+        public double Pressure { get; set; }
+        public double WindSpeed { get; set; }
+        public double WindGust { get; set; }
         public int WindBearing { get; set; }
-        public float CloudCover { get; set; }
-        public float UVIndex { get; set; }
-        public float Visibility { get; set; }
-        public float Ozone { get; set; }
+        public double CloudCover { get; set; }
+        public double UVIndex { get; set; }
+        public double Visibility { get; set; }
+        public double Ozone { get; set; }
     }
 
     public class Daily
@@ -101,39 +101,39 @@
         public string Summary { get; set; }
         public int SunriseTime { get; set; }
         public int SunsetTime { get; set; }
-        public float MoonPhase { get; set; }
-        public float PrecipIntensity { get; set; }
-        public float PrecipIntensityMax { get; set; }
+        public double MoonPhase { get; set; }
+        public double PrecipIntensity { get; set; }
+        public double PrecipIntensityMax { get; set; }
         public int PrecipIntensityMaxTime { get; set; }
-        public float PrecipProbability { get; set; }
-        public float PrecipAccumulation { get; set; }
+        public double PrecipProbability { get; set; }
+        public double PrecipAccumulation { get; set; }
         public string PrecipType { get; set; }
-        public float TemperatureHigh { get; set; }
+        public double TemperatureHigh { get; set; }
         public int TemperatureHighTime { get; set; }
-        public float TemperatureLow { get; set; }
+        public double TemperatureLow { get; set; }
         public int TemperatureLowTime { get; set; }
-        public float ApparentTemperatureHigh { get; set; }
+        public double ApparentTemperatureHigh { get; set; }
         public int ApparentTemperatureHighTime { get; set; }
-        public float ApparentTemperatureLow { get; set; }
+        public double ApparentTemperatureLow { get; set; }
         public int ApparentTemperatureLowTime { get; set; }
-        public float DewPoint { get; set; }
-        public float Humidity { get; set; }
-        public float Pressure { get; set; }
-        public float WindSpeed { get; set; }
-        public float WindGust { get; set; }
+        public double DewPoint { get; set; }
+        public double Humidity { get; set; }
+        public double Pressure { get; set; }
+        public double WindSpeed { get; set; }
+        public double WindGust { get; set; }
         public int WindGustTime { get; set; }
         public int WindBearing { get; set; }
-        public float CloudCover { get; set; }
-        public float UVIndex { get; set; }
+        public double CloudCover { get; set; }
+        public double UVIndex { get; set; }
         public int UVIndexTime { get; set; }
-        public float Visibility { get; set; }
-        public float TemperatureMin { get; set; }
+        public double Visibility { get; set; }
+        public double TemperatureMin { get; set; }
         public int TemperatureMinTime { get; set; }
-        public float TemperatureMax { get; set; }
+        public double TemperatureMax { get; set; }
         public int TemperatureMaxTime { get; set; }
-        public float ApparentTemperatureMin { get; set; }
+        public double ApparentTemperatureMin { get; set; }
         public int ApparentTemperatureMinTime { get; set; }
-        public float ApparentTemperatureMax { get; set; }
+        public double ApparentTemperatureMax { get; set; }
         public int ApparentTemperatureMaxTime { get; set; }
     }
 
