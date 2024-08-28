@@ -23,15 +23,19 @@ namespace PirateWeather_DotNetLib
             if (request.Time != null)
                 uriBuilder.Append($",{request.Time.UTCTimeStamp}");
 
-            if (request.Exclude.Count > 0)
-                uriBuilder.Append($"?exclude={string.Join(",", request.Exclude).ToLower()}");
-            else if (request.Include.Count > 0)
-                uriBuilder.Append($"?exclude={string.Join(",", ConvertIncludeToExclude(request.Include)).ToLower()}");
+            List<string> extraParams = new List<string>();
 
-            uriBuilder.Append($"&units={request.Unit.ToString().ToLower()}");
+            if (request.Exclude.Count > 0)
+                extraParams.Add($"exclude={string.Join(",", request.Exclude).ToLower()}");
+            else if (request.Include.Count > 0)
+                extraParams.Add($"exclude={string.Join(",", ConvertIncludeToExclude(request.Include)).ToLower()}");
+
+            extraParams.Add($"units={request.Unit.ToString().ToLower()}");
 
             if (request.Extend)
-                uriBuilder.Append("&extend=hourly");
+                extraParams.Add("extend=hourly");
+
+            uriBuilder.Append($"?{string.Join("&", extraParams.ToArray())}");
 
             return uriBuilder.ToString();
         }

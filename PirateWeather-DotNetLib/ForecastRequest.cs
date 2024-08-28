@@ -80,7 +80,7 @@ namespace PirateWeather_DotNetLib
         /// <summary>
         /// Number of days ago you would like to query. Converts to UTC timestamp.
         /// </summary>
-        public Time(int daysAgo)
+        public Time(double daysAgo)
         {
             DateTime epoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
             DateTime xDaysAgo = DateTime.Now.AddDays(-daysAgo);
